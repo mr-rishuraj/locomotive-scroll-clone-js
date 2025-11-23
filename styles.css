@@ -2,6 +2,7 @@ body {
     background-color: #D4C9C9;
     font-family: 'Neue Montreal', sans-serif;
     overflow: auto;
+    scroll-behavior: smooth;
 }
 
 .navbar {
@@ -9,6 +10,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 10px;
+    flex-wrap: wrap;           
 }
 
 .left:hover,
@@ -18,9 +20,41 @@ body {
 
 .left h1,
 .right h1 {
+    font-size: 2rem;    
     transition: transform 0.2s ease-out;
     will-change: transform;
 }
+
+/* Tablet  */
+
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;   
+        gap: 10px;
+        text-align: center;
+    }
+    .left h1, .right h1 {
+        font-size :1.5;
+    }
+}
+
+/*  MOBILE (below 768px) */
+@media (max-width: 768px) {
+    .left h1,
+    .right h1 {
+        font-size: 1.3rem;        
+    }
+}
+
+/*  SMALL SCREENS (below 480px)  */
+@media (max-width: 480px) {
+    .left h1,
+    .right h1 {
+        font-size: 1rem;
+    }
+}
+
+/* hero  */
 
 .hero {
     text-align: left;
@@ -56,18 +90,103 @@ body {
     will-change: transform;
 }
 
+/* Tablet */
 
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size : 6rem;
+    }
+}
+
+/*  MOBILE (below 768px) */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 4rem;        
+    }
+}
+
+/*  SMALL SCREENS (below 480px)  */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+
+/* simple scroll  */
+
+.simple-scroll-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10vh;
+}
+
+.simple-scroll-h4 {
+    width: 40%;
+}
+
+.list {
+    width: 60%;
+    
+}
+
+.li-simple-scroll {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list ul {
+        list-style-type: none;
+        cursor: pointer;
+}
+
+.list ul li {
+     border-bottom: 2px solid black;
+     border-radius: 3%;
+}
+
+.list ul li:hover {
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+    
+}
+
+/*  MOBILE (below 768px) */
+@media (max-width: 768px) {
+    .simple-scroll-div {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .simple-scroll-h4 {
+        width: 100%;
+    }
+    .list {
+        width: 100%;
+    }
+}
 
 
 
 /* Speed Control */
 
 .speed-control {
-  display: grid;
-  grid-template-columns: 45% 55%;  
-  grid-template-rows: 1fr;     
-  margin: 10px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 1fr;
+    margin: 10px;
 }
+
 .content {
     display: flex;
     flex-direction: column;
@@ -75,23 +194,186 @@ body {
 }
 
 .more-images {
-  display: grid;
-  grid-template-columns: 45% 55%;  
-  grid-template-rows: 1fr;     
-  margin: 10px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 1fr;
+    margin: 10px;
 }
 
 .image-1 {
-    margin-bottom: 10vh;
+    width: auto;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin: 10vh;
+    margin-left: 0vh;
 }
+
+.image-class-1 {
+    width: auto;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+}
+
 
 .image-2 {
     display: flex;
     flex-direction: column;
     align-items: end;
     justify-content: end;
+    overflow: hidden;
+    position: relative;
 
 }
+
+.image-class-2 {
+    object-fit: cover;
+    position: absolute;
+    will-change: transform;
+
+}
+
+/* ----------------------- */
+/* 1024px and below        */
+/* ----------------------- */
+@media (max-width: 1024px) {
+
+    /* Speed control + More images → stack vertically */
+    .speed-control,
+    .more-images {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 4vh;
+        margin: 5vh 10px;
+    }
+
+    /* Image container full width */
+    .image-1 {
+        margin: 5vh 0;
+        width: 100%;
+        height: 80vh;
+    }
+
+    .image-class-1 {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .image {
+        margin: 5vh 0;
+        width: 100%;
+        height: 80vh;
+    }
+
+    .image-class-0 {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* image-2 section */
+    .image-2 {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-class-2 {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+
+
+/* ----------------------- */
+/* 900px and below         */
+/* ----------------------- */
+@media (max-width: 900px) {
+
+    /* Stack text & image */
+    .speed-control,
+    .more-images {
+        grid-template-columns: 1fr;
+        margin: 4vh 10px;
+    }
+
+    .image-1 {
+        height: 70vh;
+    }
+
+    .image-class-1 {
+        height: 100%;
+    }
+
+    .image-2 {
+        height: 70vh;
+    }
+
+    .image {
+        margin: 5vh 0;
+        width: 100%;
+        height: 80vh;
+    }
+
+    .image-class-0 {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+
+
+/* ----------------------- */
+/* Mobile (smaller screens) */
+/* ----------------------- */
+@media (max-width: 600px) {
+
+    .speed-control,
+    .more-images {
+        grid-template-columns: 1fr;
+        margin: 3vh 5px;
+    }
+
+    .image-1 {
+        height: 60vh;
+        margin: 3vh 0;
+    }
+
+    .image-class-1 {
+        height: 100%;
+    }
+
+    .image-2 {
+        height: 60vh;
+    }
+
+    .image-class-2 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image {
+        margin: 5vh 0;
+        width: 100%;
+        height: 80vh;
+    }
+
+    .image-class-0 {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+
 /* Fixed Elements */
 
 .fixed-elements {
@@ -109,17 +391,80 @@ body {
 
 
 .image-fe {
-  width: 50%;
-  background-image: url("image-04.png");
-  min-height: 100vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  align-items: center;
-  justify-content: center;
+    width: 50%;
+    background-image: url("image-04.png");
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
 }
 
+@media (max-width: 1024px) {
+    .fixed-elements {
+        height: auto;
+        flex-direction: column;
+        gap: 4vh;
+    }
+
+    .content-fe {
+        position: relative;
+        top: unset;
+        text-align: center;
+    }
+
+    .image-fe {
+        width: 100%;
+        min-height: 70vh;
+        background-attachment: scroll; 
+    }
+}
+
+/* ------------------------- */
+/* 900px (Tablets) */
+/* ------------------------- */
+@media (max-width: 900px) {
+    .fixed-elements {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-fe {
+        min-height: 60vh;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .content-fe {
+        text-align: center;
+        padding: 20px 10px;
+    }
+}
+
+/* ------------------------- */
+/* 600px & BELOW (Phones) */
+/* ------------------------- */
+@media (max-width: 600px) {
+    .fixed-elements {
+        margin: 5px;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-fe {
+        width: 100%;
+        min-height: 50vh;
+        background-attachment: scroll;  
+    }
+
+    .content-fe {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+}
 
 /* Github  */
 
@@ -214,15 +559,77 @@ body {
     width: 100%;
 }
 
-
-@keyframes leftse {
-    from {
-        transform: translateX(-100px);
+@media (max-width: 1024px) {
+    .github-title {
+        font-size: 4rem;
     }
-    to {
-        transform: translateX(0px);
+
+    .github-left {
+        font-size: 2.2rem;
+    }
+
+    .github-right h2 {
+        font-size: 2.3rem;
+    }
+
+    .github-right p {
+        font-size: 1.1rem;
+    }
+
+    .github-button {
+        font-size: 1.6rem;
+        padding: 22px;
     }
 }
 
+/* 900px */
+@media (max-width: 900px) {
+    .github-content {
+        flex-direction: column;
+        text-align: left;
+        gap: 30px;
+    }
 
+    .github-left {
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    .github-right {
+        width: 100%;
+    }
+
+    .github-title {
+        font-size: 3rem;
+    }
+}
+
+/* 600px */
+@media (max-width: 600px) {
+    .github-title {
+        font-size: 2rem;
+    }
+
+    .github-left {
+        font-size: 1.7rem;
+    }
+
+    .github-right h2 {
+        font-size: 1.8rem;
+    }
+
+    .github-right p {
+        font-size: 1rem;
+    }
+
+    .github-button {
+        padding: 18px;
+        font-size: 1.3rem;
+    }
+
+    .github-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
 

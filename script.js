@@ -25,4 +25,3 @@ window.addEventListener("scroll", () => {
     document.querySelector(".locomotive").style.transform = `translateY(-${scrollY * 0.15}px)`;
 
 });
-
