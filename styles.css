@@ -1,0 +1,228 @@
+body {
+    background-color: #D4C9C9;
+    font-family: 'Neue Montreal', sans-serif;
+    overflow: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.left:hover,
+.right:hover {
+    color: white;
+}
+
+.left h1,
+.right h1 {
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+}
+
+.hero {
+    text-align: left;
+    justify-content: center;
+    color: #222222;
+    padding: 10px;
+    line-height: 0.9;
+    background-color: transparent;
+    margin-top: none;
+}
+
+.hero h1 {
+    font-size: 12rem;
+    background-color: transparent;
+
+}
+
+.char {
+    color: #FFFFFF;
+}
+
+.v,
+.four,
+.x {
+    display: inline-block;
+    transition: transform 0.1s linear;
+    will-change: transform;
+}
+
+.locomotive {
+    display: inline-block;
+    transition: transform 0.1s linear;
+    will-change: transform;
+}
+
+
+
+
+
+/* Speed Control */
+
+.speed-control {
+  display: grid;
+  grid-template-columns: 45% 55%;  
+  grid-template-rows: 1fr;     
+  margin: 10px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.more-images {
+  display: grid;
+  grid-template-columns: 45% 55%;  
+  grid-template-rows: 1fr;     
+  margin: 10px;
+}
+
+.image-1 {
+    margin-bottom: 10vh;
+}
+
+.image-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+
+}
+/* Fixed Elements */
+
+.fixed-elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    height: 150vh;
+}
+
+.content-fe {
+    position: sticky;
+    top: 0;
+}
+
+
+.image-fe {
+  width: 50%;
+  background-image: url("image-04.png");
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Github  */
+
+.github-div {
+    padding: 0;
+    margin: 10px;
+}
+
+
+.github-title {
+    font-size: 6rem;
+    color: #222222;
+    text-align: left;
+    line-height: 0.9;
+}
+
+.github-title span {
+    color: white;
+}
+
+
+.github-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.github-left {
+    color: #222222;
+    flex: 0.7;
+    font-size: 3rem;
+    display: flex;
+}
+
+
+.github-right {
+    flex: 2;
+    max-width: 900px;
+}
+
+.github-right h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+
+.github-right p {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 4vh;
+}
+
+
+.github-button {
+    background-color: #000;
+    color: white;
+    padding: 30px;
+    width: 100%;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: 0.3s ease;
+}
+
+
+.github-icon {
+    width: 40px;
+    height: 40px;
+    filter: invert(1);
+    transition: 0.3s ease;
+}
+
+
+.github-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.github-button:hover .github-icon {
+    filter: invert(0);
+}
+
+
+.divider {
+    margin: 10vh 0;
+    border: none;
+    border-top: 2px solid #111;
+    width: 100%;
+}
+
+
+@keyframes leftse {
+    from {
+        transform: translateX(-100px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+
+
