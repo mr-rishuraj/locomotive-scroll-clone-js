@@ -94,21 +94,21 @@ body {
 
 @media (max-width: 1024px) {
     .hero h1 {
-        font-size : 8rem;
+        font-size : 6rem;
     }
 }
 
 /*  MOBILE (below 900px) */
 @media (max-width: 900px) {
     .hero h1 {
-        font-size: 6rem;        
+        font-size: 4rem;        
     }
 }
 
 /*  SMALL SCREENS (below 480px)  */
 @media (max-width: 600px) {
     .hero h1 {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 }
 
