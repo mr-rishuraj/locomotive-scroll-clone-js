@@ -154,12 +154,8 @@ body {
 
 /* Tablet */
 
-@media (max-width: 1024px) {
-    
-}
-
-/*  MOBILE (below 768px) */
-@media (max-width: 768px) {
+/*  MOBILE (below 900px) */
+@media (max-width: 900px) {
     .simple-scroll-div {
         display: flex;
         flex-direction: column;
@@ -204,10 +200,27 @@ body {
 .image-1 {
     width: auto;
     height: 100vh;
-    overflow: hidden;
     position: relative;
+    object-fit: cover;
     margin: 10vh;
     margin-left: 0vh;
+    animation-timeline: view();
+    animation-name: scale-up;
+    animation-fill-mode: both;
+    animation-duration: 4ms;
+}
+
+@keyframes scale-up {
+    from {
+        opacity: 0.33;
+        transform: scale(0.75);
+    }
+
+    to {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    
 }
 
 .image-class-1 {
@@ -226,8 +239,11 @@ body {
     flex-direction: column;
     align-items: end;
     justify-content: end;
-    overflow: hidden;
     position: relative;
+    animation-timeline: view();
+    animation-name: scale-up;
+    animation-fill-mode: both;
+    animation-duration: 2ms;
 
 }
 
@@ -238,9 +254,9 @@ body {
 
 }
 
-/* ----------------------- */
+
 /* 1024px and below        */
-/* ----------------------- */
+
 @media (max-width: 1024px) {
 
     /* Speed control + More images → stack vertically */
@@ -292,9 +308,9 @@ body {
 
 
 
-/* ----------------------- */
+
 /* 900px and below         */
-/* ----------------------- */
+
 @media (max-width: 900px) {
 
     /* Stack text & image */
@@ -331,9 +347,9 @@ body {
 
 
 
-/* ----------------------- */
+
 /* Mobile (smaller screens) */
-/* ----------------------- */
+
 @media (max-width: 600px) {
 
     .speed-control,
@@ -399,8 +415,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    align-items: center;
-    justify-content: center;
 }
 
 @media (max-width: 1024px) {

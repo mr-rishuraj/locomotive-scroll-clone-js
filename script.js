@@ -3,6 +3,7 @@ window.addEventListener("scroll", () => {
 
     const left = document.querySelector(".left h1");
     const right = document.querySelector(".right h1");
+    
 
     const leftRect = left.getBoundingClientRect();
     const rightRect = right.getBoundingClientRect();
@@ -25,3 +26,6 @@ window.addEventListener("scroll", () => {
     document.querySelector(".locomotive").style.transform = `translateY(-${scrollY * 0.15}px)`;
 
 });
+
+
+
