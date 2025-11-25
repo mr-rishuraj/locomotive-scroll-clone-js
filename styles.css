@@ -23,6 +23,7 @@ body {
     font-size: 2rem;    
     transition: transform 0.2s ease-out;
     will-change: transform;
+    font-weight: 600;
 }
 
 /* Tablet  */
@@ -69,6 +70,7 @@ body {
 .hero h1 {
     font-size: 12rem;
     background-color: transparent;
+    font-weight: 400;
 
 }
 
