@@ -10,7 +10,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 10px;
-    flex-wrap: wrap;           
+    flex-wrap: nowrap;   
 }
 
 .left:hover,
@@ -27,11 +27,9 @@ body {
 }
 
 /* Tablet  */
-
 @media (max-width: 1024px) {
     .navbar {
-        flex-direction: column;   
-        gap: 10px;
+        flex-direction: row; 
         text-align: center;
     }
     .left h1, .right h1 {
@@ -54,6 +52,7 @@ body {
         font-size: 1rem;
     }
 }
+
 
 /* hero  */
 
@@ -107,21 +106,20 @@ body {
     }
 }
 
-/*  SMALL SCREENS (below 480px)  */
+/*  SMALL SCREENS (below 600px)  */
 @media (max-width: 600px) {
     .hero h1 {
         font-size: 3rem;
     }
 }
 
-
-/* simple scroll  */
-
+/* simple scroll */
 .simple-scroll-div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10vh;
+    gap: 150px;
 }
 
 .simple-scroll-h4 {
@@ -130,7 +128,6 @@ body {
 
 .list {
     width: 60%;
-    
 }
 
 .li-simple-scroll {
@@ -139,13 +136,15 @@ body {
 }
 
 .list ul {
-        list-style-type: none;
-        cursor: pointer;
+    list-style-type: none;
+    cursor: pointer;
+    padding: 0;
 }
 
 .list ul li {
-     border-bottom: 2px solid black;
-     border-radius: 3%;
+    border-bottom: 2px solid black;
+    border-radius: 3%;
+    padding: 10px 0;
 }
 
 .list ul li:hover {
@@ -153,27 +152,37 @@ body {
     border-bottom: 2px solid white;
 }
 
-
-/* Tablet */
-
 /*  MOBILE (below 900px) */
 @media (max-width: 900px) {
     .simple-scroll-div {
-        display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;   
         margin: 0;
         padding: 0;
-        text-align: center;
         width: 100%;
+        text-align: center;
+        gap: 50px;
     }
+
     .simple-scroll-h4 {
         width: 100%;
     }
+
     .list {
-        width: 100%;
-        align-items: center;
+        width: 90%;           
+        text-align: center;   
+    }
+
+    .li-simple-scroll {
+        justify-content: space-between;
+    }
+
+    .list ul li {
+        text-align: center;
     }
 }
+
 
 
 
@@ -429,7 +438,7 @@ body {
     .content-fe {
         position: relative;
         top: unset;
-        text-align: center;
+        text-align: left;
     }
 
     .image-fe {
@@ -455,7 +464,7 @@ body {
     }
 
     .content-fe {
-        text-align: center;
+        text-align: left;
         padding: 20px 10px;
     }
 }
@@ -478,7 +487,7 @@ body {
 
     .content-fe {
         width: 100%;
-        text-align: center;
+        text-align: left;
         padding: 15px;
     }
 }
