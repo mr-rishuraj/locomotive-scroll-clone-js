@@ -24,8 +24,6 @@ window.addEventListener("scroll", () => {
     document.querySelector(".four").style.transform = `translateY(-${scrollY * 0.25}px)`;
     document.querySelector(".x").style.transform = `translateY(-${scrollY * 0.2}px)`;
     document.querySelector(".locomotive").style.transform = `translateY(-${scrollY * 0.15}px)`;
-    document.querySelector(".image-class-1").style.transform = `translateY(-${scrollY * 0.05}px)`;
-    document.querySelector(".image-class-2").style.transform = `translateY(-${scrollY * 0.1}px)`;
 });
 
 
