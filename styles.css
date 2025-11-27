@@ -10,7 +10,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 10px;
-    flex-wrap: nowrap;   
+    flex-wrap: nowrap;
 }
 
 .left:hover,
@@ -20,7 +20,7 @@ body {
 
 .left h1,
 .right h1 {
-    font-size: 2rem;    
+    font-size: 2rem;
     transition: transform 0.2s ease-out;
     will-change: transform;
     font-weight: 600;
@@ -29,24 +29,28 @@ body {
 /* Tablet  */
 @media (max-width: 1024px) {
     .navbar {
-        flex-direction: row; 
+        flex-direction: row;
         text-align: center;
     }
-    .left h1, .right h1 {
-        font-size :1.5rem;
+
+    .left h1,
+    .right h1 {
+        font-size: 1.5rem;
     }
 }
 
 /*  MOBILE (below 900px) */
 @media (max-width: 900px) {
+
     .left h1,
     .right h1 {
-        font-size: 1.3rem;        
+        font-size: 1.3rem;
     }
 }
 
 /*  SMALL SCREENS (below 600px)  */
 @media (max-width: 600px) {
+
     .left h1,
     .right h1 {
         font-size: 1rem;
@@ -64,6 +68,20 @@ body {
     line-height: 0.9;
     background-color: transparent;
     margin-top: none;
+
+}
+
+@keyframes intro {
+    from {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+
 }
 
 .hero h1 {
@@ -83,26 +101,61 @@ body {
     display: inline-block;
     transition: transform 0.1s linear;
     will-change: transform;
+    animation: intro linear;
+    animation-iteration-count: 1;
+    /* animation-timeline: view();
+    animation-range: entry 0% cover 120%; */
+    animation-fill-mode: both;
+    animation-delay: 200ms;
+    animation-duration: 0.85s;
+}
+
+.scroll {
+    display: inline-block;
+    animation: intro linear;
+    animation-iteration-count: 1;
+    /* animation-timeline: view();
+    animation-range: entry 0% cover 120%; */
+    animation-fill-mode: both;
+    animation-delay: 100ms;
+    animation-duration: 0.85s;
+}
+
+.dot {
+    display: inline-block;
+    animation: intro linear;
+    animation-iteration-count: 1;
+    /* animation-timeline: view();
+    animation-range: entry 0% cover 120%; */
+    animation-fill-mode: both;
+    animation-delay: 200ms;
+    animation-duration: 0.85s;
 }
 
 .locomotive {
     display: inline-block;
     transition: transform 0.1s linear;
     will-change: transform;
+    animation: intro linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    /* animation-timeline: view();
+    animation-range: entry 0% cover 120%; */
+    animation-duration: 0.85s;
 }
 
 /* Tablet */
 
 @media (max-width: 1024px) {
     .hero h1 {
-        font-size : 6rem;
+        font-size: 6rem;
     }
 }
 
 /*  MOBILE (below 900px) */
 @media (max-width: 900px) {
     .hero h1 {
-        font-size: 4rem;        
+        font-size: 4rem;
     }
 }
 
@@ -143,13 +196,11 @@ body {
 
 .list ul li {
     border-bottom: 2px solid black;
-    border-radius: 3%;
     padding: 10px 0;
 }
 
 .list ul li:hover {
     color: white;
-    border-bottom: 2px solid white;
 }
 
 /*  MOBILE (below 900px) */
@@ -157,7 +208,7 @@ body {
     .simple-scroll-div {
         flex-direction: column;
         justify-content: center;
-        align-items: center;   
+        align-items: center;
         margin: 0;
         padding: 0;
         width: 100%;
@@ -170,8 +221,8 @@ body {
     }
 
     .list {
-        width: 90%;           
-        text-align: center;   
+        width: 90%;
+        text-align: center;
     }
 
     .li-simple-scroll {
@@ -215,10 +266,7 @@ body {
     object-fit: cover;
     margin: 10vh;
     margin-left: 0vh;
-    animation-timeline: view();
-    animation-name: scale-up;
-    animation-fill-mode: both;
-    animation-duration: 4ms;
+
 }
 
 @keyframes scale-up {
@@ -231,7 +279,7 @@ body {
         opacity: 0.9;
         transform: scale(1);
     }
-    
+
 }
 
 .image-class-1 {
@@ -241,6 +289,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    transition: transform 0.1s linear;
     will-change: transform;
 }
 
@@ -251,10 +300,6 @@ body {
     align-items: end;
     justify-content: end;
     position: relative;
-    animation-timeline: view();
-    animation-name: scale-up;
-    animation-fill-mode: both;
-    animation-duration: 2ms;
 
 }
 
@@ -262,6 +307,7 @@ body {
     object-fit: cover;
     position: absolute;
     will-change: transform;
+    transition: transform 1ms linear;
 
 }
 
@@ -270,7 +316,6 @@ body {
 
 @media (max-width: 1024px) {
 
-    /* Speed control + More images → stack vertically */
     .speed-control,
     .more-images {
         grid-template-columns: 1fr;
@@ -279,7 +324,6 @@ body {
         margin: 5vh 10px;
     }
 
-    /* Image container full width */
     .image-1 {
         margin: 5vh 0;
         width: 100%;
@@ -444,13 +488,11 @@ body {
     .image-fe {
         width: 100%;
         min-height: 70vh;
-        background-attachment: scroll; 
+        background-attachment: scroll;
     }
 }
 
-/* ------------------------- */
 /* 900px (Tablets) */
-/* ------------------------- */
 @media (max-width: 900px) {
     .fixed-elements {
         flex-direction: column;
@@ -469,9 +511,7 @@ body {
     }
 }
 
-/* ------------------------- */
 /* 600px & BELOW (Phones) */
-/* ------------------------- */
 @media (max-width: 600px) {
     .fixed-elements {
         margin: 5px;
@@ -482,7 +522,7 @@ body {
     .image-fe {
         width: 100%;
         min-height: 50vh;
-        background-attachment: scroll;  
+        background-attachment: scroll;
     }
 
     .content-fe {
@@ -508,7 +548,8 @@ body {
     font-weight: 500;
 }
 
-.github-title span {
+
+.scroll {
     color: white;
 }
 
@@ -547,6 +588,8 @@ body {
 
 
 .github-button {
+    position: relative;
+    overflow: hidden;
     background-color: #000;
     color: white;
     padding: 30px;
@@ -557,9 +600,30 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    transition: 0.3s ease;
+    transition: color 0.3s ease;
+    z-index: 0;
 }
 
+.github-button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transform: translateY(100%);
+    transition: transform 0.35s ease;
+    z-index: -1;
+}
+
+.github-button:hover {
+    color: black;
+}
+
+.github-button:hover::before {
+    transform: translateY(0);
+}
 
 .github-icon {
     width: 40px;
@@ -568,16 +632,9 @@ body {
     transition: 0.3s ease;
 }
 
-
-.github-button:hover {
-    background-color: white;
-    color: black;
-}
-
 .github-button:hover .github-icon {
     filter: invert(0);
 }
-
 
 .divider {
     margin: 10vh 0;
@@ -659,4 +716,3 @@ body {
         height: 28px;
     }
 }
-
